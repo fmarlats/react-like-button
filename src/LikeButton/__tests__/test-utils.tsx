@@ -6,7 +6,7 @@
  * - Common helper functions
  * - Mock factories
  */
-import { vi } from "vitest"
+import { type Mock, vi } from "vitest"
 import type { ParticlePreset, ParticleShapePreset } from "../../Particle/types"
 
 // ============================================
@@ -43,7 +43,7 @@ export const PARTICLE_SHAPES: ParticleShapePreset[] = [
 /**
  * Create mock callback functions for testing.
  */
-export function createMockCallbacks() {
+export function createMockCallbacks(): { onClick: Mock; onRightClick: Mock } {
   return {
     onClick: vi.fn(),
     onRightClick: vi.fn(),
