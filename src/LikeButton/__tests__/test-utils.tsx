@@ -4,9 +4,7 @@
  * This module provides:
  * - Shared test fixtures (presets, shapes, etc.)
  * - Common helper functions
- * - Mock factories
  */
-import { type Mock, vi } from "vitest"
 import type { ParticlePreset, ParticleShapePreset } from "../../Particle/types"
 
 // ============================================
@@ -35,20 +33,6 @@ export const PARTICLE_SHAPES: ParticleShapePreset[] = [
   "square",
   "sparkle",
 ]
-
-// ============================================
-// Mock Factories
-// ============================================
-
-/**
- * Create mock callback functions for testing.
- */
-export function createMockCallbacks(): { onClick: Mock; onRightClick: Mock } {
-  return {
-    onClick: vi.fn(),
-    onRightClick: vi.fn(),
-  }
-}
 
 // ============================================
 // DOM Query Helpers
